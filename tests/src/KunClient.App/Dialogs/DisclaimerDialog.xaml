@@ -116,7 +116,7 @@
                                        Foreground="{DynamicResource Theme.LogSuccess}" Margin="0,0,0,8"/>
                             <TextBlock TextWrapping="Wrap" Foreground="{DynamicResource Theme.TextSecondary}"
                                        FontSize="11.5" LineHeight="20">
-                                <Run Text="作者：小坤ovo　　联系方式：2089449185@qq.com"/>
+                                <Run Text="作者：小坤ovo"/>
                                 <LineBreak/><LineBreak/>
                                 <Run Text="承诺不会在工具中植入任何恶意代码，不会收集与功能无关的个人信息，"/>
                                 <LineBreak/>

@@ -5,7 +5,7 @@
     <!-- 经典工具箱版式（配方见 docs/ui-toolbox-skin.md）：
          ① 页面标题栏（ctrl:PageHeaderBar）已删除 —— 页签名「关于」就是标题；
          ② 底色画在页面根 Grid 上并取 Theme.BgTint（全局「界面透明」改的就是它的 alpha）；
-         ③ 每个分区（版本信息 / 合规承诺 / 功能范围 / 联系方式 / 反馈人员 / 关于收费 / 免责声明 / 开源许可证）
+         ③ 每个分区（版本信息 / 合规承诺 / 功能范围 / 反馈人员 / 关于收费 / 免责声明 / 开源许可证）
             都换成 ToolGroup 分组框：白底 + 1px 灰描边 + 标题压在边框线上，组内不再套 Padding；
             原来每个卡片里那行 <TextBlock Text="X" Style="{StaticResource SectionHeader}"/> 标题已删（挪到 Header 上）；
          ④ 读数用「标签: 值」两列（ToolFieldLabel / ToolFieldValue），沿用原卡片的分区顺序；
@@ -125,36 +125,11 @@
                     </Grid>
                 </HeaderedContentControl>
 
-                <!-- ═══════════ 联系方式 ═══════════ -->
-                <HeaderedContentControl Style="{StaticResource ToolGroup}" Header="联系方式">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="6"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-
-                        <TextBlock Grid.Row="0" Grid.Column="0" Text="QQ:" Style="{StaticResource ToolFieldLabel}"/>
-                        <TextBlock Grid.Row="0" Grid.Column="1" Text="2089449185"
-                                   Height="{StaticResource Tool.RowHeight}" Style="{StaticResource ToolFieldValue}"
-                                   HorizontalAlignment="Right"/>
-
-                        <TextBlock Grid.Row="2" Grid.Column="0" Text="Email:" Style="{StaticResource ToolFieldLabel}"/>
-                        <TextBlock Grid.Row="2" Grid.Column="1" Text="2089449185@qq.com"
-                                   Height="{StaticResource Tool.RowHeight}" Style="{StaticResource ToolFieldValue}"
-                                   HorizontalAlignment="Right"/>
-                    </Grid>
-                </HeaderedContentControl>
-
                 <!-- ═══════════ 反馈人员 ═══════════
                      反馈人员单独成块 —— 贡献形式与代码/资源类投入不同（偏缺陷与体验问题上报），
                      混在一起会丢掉这层身份。
-                     🔴 开源版已移除原先的「鸣谢」区块（内含真实姓名与 QQ 号）；
-                        如需恢复请只保留昵称，不要放联系方式。 -->
+                     🔴 开源版已移除「鸣谢」区块（真实姓名 + QQ 号）与本区块的 QQ 号，
+                        只保留昵称。如需补充署名，**只放昵称，不要放 QQ / 邮箱 / 手机号**。 -->
                 <HeaderedContentControl Style="{StaticResource ToolGroup}" Header="反馈人员">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -170,17 +145,8 @@
                         </Grid.RowDefinitions>
 
                         <TextBlock Grid.Row="0" Grid.Column="0" Text="河南省省长-青墨" Style="{StaticResource ToolFieldLabel}"/>
-                        <TextBlock Grid.Row="0" Grid.Column="1" Text="QQ: 2117598242"
-                                   Height="{StaticResource Tool.RowHeight}" Style="{StaticResource ToolFieldValue}"
-                                   HorizontalAlignment="Right"/>
                         <TextBlock Grid.Row="2" Grid.Column="0" Text="♂甩@棍🇨🇳" Style="{StaticResource ToolFieldLabel}"/>
-                        <TextBlock Grid.Row="2" Grid.Column="1" Text="QQ: 2433862624"
-                                   Height="{StaticResource Tool.RowHeight}" Style="{StaticResource ToolFieldValue}"
-                                   HorizontalAlignment="Right"/>
                         <TextBlock Grid.Row="4" Grid.Column="0" Text="是宝不是贝^" Style="{StaticResource ToolFieldLabel}"/>
-                        <TextBlock Grid.Row="4" Grid.Column="1" Text="QQ: 1781653834"
-                                   Height="{StaticResource Tool.RowHeight}" Style="{StaticResource ToolFieldValue}"
-                                   HorizontalAlignment="Right"/>
                     </Grid>
                 </HeaderedContentControl>
 
