@@ -5,7 +5,7 @@
     <!-- 经典工具箱版式（配方见 docs/ui-toolbox-skin.md）：
          ① 页面标题栏（ctrl:PageHeaderBar）已删除 —— 页签名「关于」就是标题；
          ② 底色画在页面根 Grid 上并取 Theme.BgTint（全局「界面透明」改的就是它的 alpha）；
-         ③ 每个分区（版本信息 / 合规承诺 / 功能范围 / 联系方式 / 鸣谢 / 反馈人员 / 关于收费 / 免责声明 / 开源许可证）
+         ③ 每个分区（版本信息 / 合规承诺 / 功能范围 / 联系方式 / 反馈人员 / 关于收费 / 免责声明 / 开源许可证）
             都换成 ToolGroup 分组框：白底 + 1px 灰描边 + 标题压在边框线上，组内不再套 Padding；
             原来每个卡片里那行 <TextBlock Text="X" Style="{StaticResource SectionHeader}"/> 标题已删（挪到 Header 上）；
          ④ 读数用「标签: 值」两列（ToolFieldLabel / ToolFieldValue），沿用原卡片的分区顺序；
@@ -150,72 +150,11 @@
                     </Grid>
                 </HeaderedContentControl>
 
-                <!-- ═══════════ 鸣谢 ═══════════ -->
-                <HeaderedContentControl Style="{StaticResource ToolGroup}" Header="鸣谢">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="6"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="6"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="6"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="6"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="6"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="6"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="6"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="6"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-
-                        <TextBlock Grid.Row="0" Grid.Column="0" Text="香菜" Style="{StaticResource ToolFieldLabel}"/>
-                        <TextBlock Grid.Row="0" Grid.Column="1" Text="服务器支持 · QQ: 3328761646"
-                                   Height="{StaticResource Tool.RowHeight}" Style="{StaticResource ToolFieldValue}"
-                                   HorizontalAlignment="Right"/>
-                        <TextBlock Grid.Row="2" Grid.Column="0" Text="魚" Style="{StaticResource ToolFieldLabel}"/>
-                        <TextBlock Grid.Row="2" Grid.Column="1" Text="UI 设计 · QQ: 1708315952"
-                                   Height="{StaticResource Tool.RowHeight}" Style="{StaticResource ToolFieldValue}"
-                                   HorizontalAlignment="Right"/>
-                        <TextBlock Grid.Row="4" Grid.Column="0" Text="张天师" Style="{StaticResource ToolFieldLabel}"/>
-                        <TextBlock Grid.Row="4" Grid.Column="1" Text="QQ: 3098258542"
-                                   Height="{StaticResource Tool.RowHeight}" Style="{StaticResource ToolFieldValue}"
-                                   HorizontalAlignment="Right"/>
-                        <TextBlock Grid.Row="6" Grid.Column="0" Text="Ramdisk" Style="{StaticResource ToolFieldLabel}"/>
-                        <TextBlock Grid.Row="6" Grid.Column="1" Text="QQ: 2669016593"
-                                   Height="{StaticResource Tool.RowHeight}" Style="{StaticResource ToolFieldValue}"
-                                   HorizontalAlignment="Right"/>
-                        <TextBlock Grid.Row="8" Grid.Column="0" Text="小楠xiaonan" Style="{StaticResource ToolFieldLabel}"/>
-                        <TextBlock Grid.Row="8" Grid.Column="1" Text="QQ: 487825006"
-                                   Height="{StaticResource Tool.RowHeight}" Style="{StaticResource ToolFieldValue}"
-                                   HorizontalAlignment="Right"/>
-                        <TextBlock Grid.Row="10" Grid.Column="0" Text="清辞" Style="{StaticResource ToolFieldLabel}"/>
-                        <TextBlock Grid.Row="10" Grid.Column="1" Text="QQ: 3756541352"
-                                   Height="{StaticResource Tool.RowHeight}" Style="{StaticResource ToolFieldValue}"
-                                   HorizontalAlignment="Right"/>
-                        <TextBlock Grid.Row="12" Grid.Column="0" Text="皓皓的小月" Style="{StaticResource ToolFieldLabel}"/>
-                        <TextBlock Grid.Row="12" Grid.Column="1" Text="QQ: 1541420886"
-                                   Height="{StaticResource Tool.RowHeight}" Style="{StaticResource ToolFieldValue}"
-                                   HorizontalAlignment="Right"/>
-                        <TextBlock Grid.Row="14" Grid.Column="0" Text="GitHub" Style="{StaticResource ToolFieldLabel}"/>
-                        <TextBlock Grid.Row="14" Grid.Column="1" Text="技术平台"
-                                   Height="{StaticResource Tool.RowHeight}" Style="{StaticResource ToolFieldValue}"
-                                   HorizontalAlignment="Right"/>
-                    </Grid>
-                </HeaderedContentControl>
-
                 <!-- ═══════════ 反馈人员 ═══════════
-                     与官网「关于」区同口径：反馈人员单独成块 —— 贡献形式与鸣谢不同
-                     （鸣谢偏代码/资源/测试投入，反馈偏缺陷与体验问题上报），混在一起会丢掉这层身份。
-                     版本号与名单来源见网站 website/src/components/Showcase.tsx 的 Team()。 -->
+                     反馈人员单独成块 —— 贡献形式与代码/资源类投入不同（偏缺陷与体验问题上报），
+                     混在一起会丢掉这层身份。
+                     🔴 开源版已移除原先的「鸣谢」区块（内含真实姓名与 QQ 号）；
+                        如需恢复请只保留昵称，不要放联系方式。 -->
                 <HeaderedContentControl Style="{StaticResource ToolGroup}" Header="反馈人员">
                     <Grid>
                         <Grid.ColumnDefinitions>
